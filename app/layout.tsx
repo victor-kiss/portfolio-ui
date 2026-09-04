@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  const gtag = process.env.GTAG_ID
+  const gtag = process.env.GTAG_ID || ""
   return (
     <html
       suppressHydrationWarning
@@ -63,7 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(myInfoSchema) }}
       />
       </head>
-       <GoogleTagManager gtmId={"sua chave do gtag"} />
+       <GoogleTagManager gtmId={gtag} />
    
       <body className="min-h-full flex flex-col">
         <header>

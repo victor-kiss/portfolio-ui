@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
- 
+ const baseUrl = process?.env.PROJECT_URL || ""
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -13,6 +14,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/'],
       },
     ],
-    sitemap: 'https://mydomain.com/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
   }
 }

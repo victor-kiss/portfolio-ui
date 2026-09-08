@@ -24,8 +24,10 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const baseUrl = process?.env.PROJECT_URL || ""
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mydomain.com'),
+  metadataBase: new URL(baseUrl),
   icons:{
     icon:'/favicon.ico'
   },

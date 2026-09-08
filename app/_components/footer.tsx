@@ -21,7 +21,7 @@ export default function Footer() {
         {/* Centro: Links de Navegação Rápida */}
         <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-xs tracking-widest text-zinc-800">
            <Link
-            href="#projetos"
+            href="/home"
             className="hover:text-zinc-950 transition-colors"
           >
             Inicio

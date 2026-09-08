@@ -30,7 +30,7 @@ export default function Navbar() {
   };
 
   const links = [
-    { title: "Início", url: "/", target: null },
+    { title: "Início", url: "/home", target: null },
     { title: "Sobre Mim", url: "#sobre-mim ", target: null },
     { title: "Skills", url: "#stack", target: null },
     { title: "Projetos", url: "#projetos", target: null },

@@ -14,7 +14,7 @@ export default function HeroScene() {
     <Canvas
       camera={{ position: [-1, 0, 3.8], fov: 45 }}
       gl={{ antialias: true }}
-      className="w-full h-full"
+      className="w-full h-full !touch-pan-y"
     >
       <ambientLight intensity={0.8} />
 

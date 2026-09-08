@@ -14,7 +14,7 @@ export default function ComputerScene() {
     <Canvas
       camera={{ position: [2, -2, 4.5], fov: 45 }}
       gl={{ antialias: true }}
-      className="w-full h-full"
+      className="w-full h-full !touch-pan-y"
     >
       <ambientLight intensity={0.8} />
 

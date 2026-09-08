@@ -15,7 +15,7 @@ export default function AlienHandScene() {
       <Canvas
         camera={{ position: [2, -0.5, 5], fov: 45 }}
         gl={{ antialias: true }}
-        className="w-full h-full "
+        className="w-full h-full !touch-pan-y"
       >
         <ambientLight intensity={0.5} />
 

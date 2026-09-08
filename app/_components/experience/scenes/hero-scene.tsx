@@ -37,10 +37,6 @@ export default function HeroScene() {
         autoRotateSpeed={2}
         maxPolarAngle={Math.PI / 2 + 0.1}
         minPolarAngle={Math.PI / 2 - 0.1}
-        touches={{
-          ONE: undefined,
-          TWO: TOUCH.ROTATE,
-        }}
       />
     </Canvas>
   );

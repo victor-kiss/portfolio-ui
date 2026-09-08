@@ -38,10 +38,6 @@ export default function AlienHandScene() {
           autoRotateSpeed={2}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2 - 0.1}
-          touches={{
-            ONE: undefined,
-            TWO: TOUCH.ROTATE,
-          }}
         />
       </Canvas>
     </>

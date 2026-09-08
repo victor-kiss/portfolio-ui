@@ -37,7 +37,7 @@ export default function AboutSection() {
           </p>
         </div>
       </div>
-      <div className="w-full h-full min-h-[300px]  xl:min-h-full flex items-center justify-center px-4 xl:p-0 ">
+      <div className="w-full h-full min-h-[300px]  xl:min-h-full flex items-center justify-center">
         <ComputerScene />
       </div>
     </section>

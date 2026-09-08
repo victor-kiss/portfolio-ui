@@ -6,7 +6,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experiencia"
-      className="w-full py-20 px-6 sm:px-12 max-w-7xl sm:mx-auto flex flex-col"
+      className="w-full py-20 p-6 sm:px-12 max-w-7xl sm:mx-auto flex flex-col"
     >
       <div className="space-y-4 mb-16 flex flex-col sm:items-center justify-center">
         <h2 className="font-extrabold text-2xl sm:text-3xl md:text-4xl tracking-widest uppercase  text-zinc-900">

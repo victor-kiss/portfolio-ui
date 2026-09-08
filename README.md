@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-### Arquitetura & Stack sob o capô
+### Arquitetura & Stack
 
 A estrutura foi pensada para escalar e manter a performance em dia, mesmo socando WebGL no meio da tela. Inspirado no ecossistema `pmndrs` (`@react-three/fiber`, `drei`), o core é focado em renderização declarativa e componentização estrita.
 

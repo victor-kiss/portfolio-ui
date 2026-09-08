@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Victor Kiss - Portfólio.
 
-## Getting Started
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen?style=flat&colorA=000000&colorB=000000)](#)
+[![Next.js](https://img.shields.io/badge/Next.js-14+-black?style=flat&colorA=000000&colorB=000000)](#)
+[![Three.js](https://img.shields.io/badge/Three.js-R3F-black?style=flat&colorA=000000&colorB=000000)](#)
+[![License](https://img.shields.io/badge/license-MIT-black?style=flat&colorA=000000&colorB=000000)](#)
 
-First, run the development server:
+Repositório do meu portfólio pessoal. A ideia aqui é juntar uma pegada **tech** com experiências 3D de alta performance, rodando tudo em cima de uma stack moderna.
+
+[Live Demo](#) · [Reportar Bug](#)
+
+---
+
+### Setup
 
 ```bash
+git clone https://github.com/victor-kiss/portfolio-ui.git
+cd portfolio-ui
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Arquitetura & Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+A estrutura foi pensada para escalar e manter a performance em dia, mesmo socando WebGL no meio da tela. Inspirado no ecossistema `pmndrs` (`@react-three/fiber`, `drei`), o core é focado em renderização declarativa e componentização estrita.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### 1. React Three Fiber (R3F) & WebGL
+Zero código imperativo do Three.js puro. O canvas 3D vive direto na árvore do React. Isso permite injetar modelos de estética tech/biomecânica e interfaces retrô (como o Mac 128k) integrando os eventos do DOM perfeitamente com o contexto do WebGL.
 
-## Learn More
+```jsx
+// WebGL declarativo amarrado ao ciclo de vida do React
+import { Canvas } from '@react-three/fiber'
+import { Environment, PresentationControls, Float } from '@react-three/drei'
+import { CyberpunkTerminal } from './components/CyberpunkTerminal'
 
-To learn more about Next.js, take a look at the following resources:
+export default function HeroScene() {
+  return (
+    <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 0, 5], fov: 45 }}>
+      <ambientLight intensity={0.5} />
+      <PresentationControls global polar={[-0.4, 0.2]} azimuth={[-0.4, 0.2]}>
+        <Float rotationIntensity={0.4}>
+          <CyberpunkTerminal />
+        </Float>
+      </PresentationControls>
+      <Environment preset="city" />
+    </Canvas>
+  )
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 2. Next.js (App Router) & Animações
+O routing e SSR ficam na conta do App Router do Next. 
+- **Server vs Client Boundaries:** *Server Components* cuidam do esqueleto da página e do SEO. Os *Client Components* rodam apenas na ponta onde a interatividade (state, WebGL) é estritamente necessária.
+- **Coreografia de UI:** O DOM e o Canvas conversam através de motores como **Framer Motion** e **GSAP**, amarrando timelines de scroll às posições de câmera sem derrubar o framerate.
+- **Lazy Loading:** Os chunks mais pesados de 3D carregam via `next/dynamic` pra não penalizar o First Contentful Paint (FCP).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### 3. AppSec & Infra
+Frontend não é terra sem lei. O app sobe com Content Security Policy (CSP) bem restrito e security headers injetados direto na config do Next. O ambiente de desenvolvimento (Linux/Mint) reflete o de produção: rodamos um container Docker com hardening aplicado, garantindo deploy rápido, isolamento e mitigação de vetores de ataque comuns.
 
-## Deploy on Vercel
+### Roadmap: Integração com Backend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Embora este repositório foque na UI, a arquitetura do frontend já está preparada para o consumo de microsserviços. O escopo futuro prevê a integração com APIs conteinerizadas que serão desenvolvidas para o projeto usando tecnologias como (Golang / Python / Typescript). 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+<div align="center">
+  <b>Victor Kiss</b> • Software Engineer
+</div>

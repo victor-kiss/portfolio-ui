@@ -22,7 +22,7 @@ export default  function Alien(props: JSX.IntrinsicElements['group']) {
 
   // Definimos uma escala base que aumenta ou diminui proporcionalmente à largura da tela
   // Se a tela for estreita (mobile), a escala diminui; se for larga (desktop), cresce.
-  const responsiveScale = width < 3 ? width * 1 : 2
+  const responsiveScale = width < 3 ? width * 0.9 : 2
 
   return (
     <group {...props} dispose={null}>

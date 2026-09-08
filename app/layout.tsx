@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://mydomain.com.br',
+    url: baseUrl,
     title: 'Victor Kiss | Software Engineer',
     description: 'Portfólio de engenharia de software.',
     siteName: 'Victor Kiss',

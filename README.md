@@ -11,7 +11,7 @@ Repositório do meu portfólio pessoal. A ideia aqui é juntar uma pegada **tech
 
 ---
 
-### ⚙️ Setup
+### Setup
 
 ```bash
 git clone https://github.com/victor-kiss/portfolio-ui.git
@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-### 🏗️ Arquitetura & Stack sob o capô
+### Arquitetura & Stack sob o capô
 
 A estrutura foi pensada para escalar e manter a performance em dia, mesmo socando WebGL no meio da tela. Inspirado no ecossistema `pmndrs` (`@react-three/fiber`, `drei`), o core é focado em renderização declarativa e componentização estrita.
 

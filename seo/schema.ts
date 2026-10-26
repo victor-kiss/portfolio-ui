@@ -6,7 +6,7 @@ export const myInfoSchema: WithContext<Person> = {
   '@type': 'Person',
   name: 'Victor Kiss',
   jobTitle: 'Software Engineer',
-  url: 'https://mydomain.com.br',
+  url: 'https://victorkiss.com',
   sameAs: [
     'https://github.com/victor-kiss',
     'https://www.linkedin.com/in/victor-kiss'

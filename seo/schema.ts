@@ -19,7 +19,7 @@ export const myInfoSchema: WithContext<Person> = {
   },
   worksFor: {
     '@type': 'Organization',
-    name: 'Casa Civil do Estado de São Paulo' 
+    name: 'Casa Civil do Município de São Paulo' 
   },
   knowsAbout: knowledges
 };

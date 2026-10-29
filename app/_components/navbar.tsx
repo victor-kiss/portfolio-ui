@@ -50,11 +50,7 @@ export default function Navbar() {
           {/* Logo limpo e tipográfico */}
           <Link
             href={"/"}
-            className={`text-xl font-bold tracking-tight transition-colors ${
-              scrolled
-                ? "text-gray-900 hover:text-black"
-                : "text-gray-900 hover:text-gray-600"
-            }`}
+            className={`text-xl font-bold tracking-tight transition-colors text-gray-900 hover:text-black`}
             onClick={closeNavbar}
           >
             &#91;VK&#93;
@@ -102,7 +98,7 @@ export default function Navbar() {
                   <Link
                     href={data.url}
                     target={data.target ? "_blank" : "_self"}
-                    className="text-sm font-medium text-gray-900 hover:text-gray-950 transition-colors"
+                    className={`text-sm font-medium transition-colors text-slate-900 hover:text-slate-900`}
                     onClick={closeNavbar}
                   >
                     {data.title}

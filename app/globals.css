@@ -10,6 +10,9 @@ body{
 h1,h2,h3,h4,h5,h6{
   font-family:var(--font-syne), sans-serif;
 }
+.syne{
+    font-family:var(--font-syne), sans-serif;
+}
 
 canvas{
   touch-action: pan-y !important;

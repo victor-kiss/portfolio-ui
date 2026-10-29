@@ -9,6 +9,15 @@ import { Analytics } from "@vercel/analytics/next"
 
 const Navbar = dynamic(() => import('./_components/navbar'))
 const Footer = dynamic(() => import('./_components/footer'))
+import { Host_Grotesk } from "next/font/google";
+
+const hostGrotesk = Host_Grotesk({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-host-grotesk",
+  display: "swap",
+});
+
 const syne = Syne({
   subsets: ["latin"],
   weight: ["700", "800"],

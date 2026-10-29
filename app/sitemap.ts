@@ -4,7 +4,7 @@ import {MetadataRoute} from 'next'
 export default function sitemap(): MetadataRoute.Sitemap{
     const baseUrl = process?.env.PROJECT_URL || ""
 
-    const publicRoutes = ["/home"]
+    const publicRoutes = ["/"]
 
     const routes: MetadataRoute.Sitemap = publicRoutes.map((route) =>({
         url: `${baseUrl}${route}`,

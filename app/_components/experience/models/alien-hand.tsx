@@ -18,7 +18,7 @@ export default function AlienHand(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/alien-hand-final.glb') as unknown as GLTFResult
 
    const { width } = useThree((state) => state.viewport)
-    const responsiveScale = width < 3 ? width * 0.8 : 2
+    const responsiveScale = width < 3 ? width * 0.7 : 2
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.tmp8lqeukjqobj.geometry} material={materials.pbr_material} position={[0.017, 0.168, -0.01]} scale={responsiveScale}  />

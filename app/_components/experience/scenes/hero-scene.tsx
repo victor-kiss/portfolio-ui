@@ -6,9 +6,9 @@ import { Html } from "@react-three/drei";
 import dynamic from "next/dynamic";
 import ModelLoader from "../../ui/model-loader";
 import { Suspense } from "react";
-import { TOUCH } from "three";
 
 const Alien = dynamic(() => import("../models/alien"));
+
 export default function HeroScene() {
   return (
     <Canvas
@@ -16,9 +16,33 @@ export default function HeroScene() {
       gl={{ antialias: true }}
       className="w-full h-full !touch-pan-y"
     >
-      <ambientLight intensity={0.8} />
+      {/* Reduz levemente a iluminação global para não lavar o contraste do modelo */}
+      <ambientLight intensity={0.5} />
 
-      {/* O Center calcula os limites da malha (bounding box) e centraliza perfeitamente */}
+      {/* Rim Light (Luz de contorno traseira/lateral):
+          Cria uma borda luminosa esverdeada/ciano que separa o alien do fundo roxo */}
+      <directionalLight 
+        position={[3, 2, -3]} 
+        intensity={2.5} 
+        color="#00ffcc" 
+      />
+
+      {/* Key Light (Luz principal frontal):
+          Luz branca suave vindo de cima/frente para revelar os detalhes e texturas do alien */}
+      <directionalLight 
+        position={[-2, 3, 2]} 
+        intensity={1.2} 
+        color="#ffffff" 
+      />
+
+      {/* Fill Light (Luz de preenchimento inferior):
+          Rebate um tom arroxeado nas sombras inferiores para integrar o alien ao ambiente */}
+      <directionalLight 
+        position={[0, -3, 1]} 
+        intensity={0.6} 
+        color="#a855f7" 
+      />
+
       <Center position={[0, -0.75, 0]}>
         <Suspense
           fallback={
@@ -30,7 +54,10 @@ export default function HeroScene() {
           <Alien />
         </Suspense>
       </Center>
-      <Environment preset="studio" />
+
+      {/* Ajustado o ambiente do studio para um tom mais sutil */}
+      <Environment preset="sunset" />
+
       <OrbitControls
         enableZoom={false}
         autoRotate

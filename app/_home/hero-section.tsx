@@ -36,15 +36,15 @@ export default function HeroSection() {
     <>
       <div className="relative w-full h-screen overflow-hidden">
         {/* CAMADA DE FUNDO RESPONSIVA (Texto Gigante) */}
-        <div className="absolute bottom-0 w-full h-20 bg-linear-to-t from-slate-100 via-white/10 to-transparent z-50 backdrop-blur-md [mask-image:linear-gradient(to_top,black_20%,transparent_100%)] pointer-events-none"></div>
+        <div className="absolute bottom-0 w-full h-20 bg-linear-to-t from-slate-50 via-white/10 to-transparent z-50 backdrop-blur-md [mask-image:linear-gradient(to_top,black_20%,transparent_100%)] pointer-events-none"></div>
         
         {/* Fundo animado suave para os textos gigantes de fundo */}
         <div 
-          className="absolute inset-0 w-full h-full flex items-center justify-center flex-col select-none pointer-events-none blur-sm overflow-hidden"
+          className="absolute inset-0 w-full h-full flex items-center justify-center flex-col select-none pointer-events-none blur-xs overflow-hidden"
         >
           {Array.from({ length: 6 }).map((_, index) => (
             <span
-              className="font-extrabold text-[27vw] sm:text-[20vw] uppercase leading-none tracking-tighter text-white/50 whitespace-nowrap"
+              className="font-extrabold text-[27vw] sm:text-[25vw] uppercase leading-none tracking-tighter text-purple-200/30 whitespace-nowrap"
               key={index}
             >
               Victor
@@ -76,7 +76,7 @@ export default function HeroSection() {
           </h1>
         </motion.div>
 
-        <div className="w-full h-screen bg-linear-to-r from-slate-200 via-slate-300 to-slate-200 ">
+        <div className="w-full h-screen bg-gradient-to-b from-slate-50 via-indigo-50/30 to-slate-100">
            <HeroScene />
         </div>  
        

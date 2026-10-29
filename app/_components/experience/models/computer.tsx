@@ -19,7 +19,7 @@ export default function Computer(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/computer-final.glb') as unknown as GLTFResult
 
   const { width } = useThree((state) => state.viewport)
-  const responsiveScale = width < 3 ? width * 0.8 : 2
+  const responsiveScale = width < 3 ? width * 0.6 : 2
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.tmpwk9pjwbsobj.geometry} material={materials.pbr_material} position={[0.048, -0.066, -0.069]} scale={responsiveScale} />

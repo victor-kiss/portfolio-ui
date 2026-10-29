@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import ModelLoader from "../../ui/model-loader";
 import { TOUCH } from "three";
+import {AsciiRenderer} from "@react-three/drei"
 
 const Computer = dynamic(() => import("../models/computer"));
 
@@ -17,8 +18,8 @@ export default function ComputerScene() {
       className="w-full h-full !touch-pan-y"
     >
       <ambientLight intensity={0.8} />
-
-      <Center>
+    
+      <Center position={[0,-0.4,0]}>
         <Suspense
           fallback={
             <Html center>

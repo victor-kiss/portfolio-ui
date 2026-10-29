@@ -73,7 +73,7 @@ export const FadeCarousel: React.FC<FadeCarouselProps> = ({
       {/* Controles de Navegação */}
       <div className="flex items-center justify-center gap-4 mt-6">
         <button
-          className="w-10 h-10 flex items-center justify-center bg-gray-50 border border-gray-200 rounded-full shadow-sm text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-10 h-10 flex items-center justify-center  bg-slate-900  border border-gray-200 rounded-full shadow-sm text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
           onClick={scrollPrev}
           disabled={prevBtnDisabled}
           aria-label="Projeto anterior"
@@ -94,7 +94,7 @@ export const FadeCarousel: React.FC<FadeCarouselProps> = ({
         </button>
 
         <button
-          className="w-10 h-10 flex items-center justify-center bg-gray-50 border border-gray-200 rounded-full shadow-sm text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-10 h-10 flex items-center justify-center bg-slate-900 border border-gray-200 rounded-full shadow-sm text-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
           onClick={scrollNext}
           disabled={nextBtnDisabled}
           aria-label="Próximo projeto"
